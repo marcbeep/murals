@@ -18,7 +18,7 @@ class InfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         infoLabel.text = info
-        imageView.downloaded(from: URL(string: url ?? "")!)
+        imageView.downloaded(from: URL(string: url )!)
 
     }
 

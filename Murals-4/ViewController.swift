@@ -19,43 +19,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var firstRun = true
         var startTrackingTheUser = false
          
-        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            let locationOfUser = locations[0] //this method returns an array of locations
-            //generally we always want the first one (usually there's only 1 anyway)
-            let latitude = locationOfUser.coordinate.latitude
-            let longitude = locationOfUser.coordinate.longitude
-            //get the users location (latitude & longitude)
-            let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-             
-            if firstRun {
-                firstRun = false
-                let latDelta: CLLocationDegrees = 0.0025
-                let lonDelta: CLLocationDegrees = 0.0025
-                //a span defines how large an area is depicted on the map.
-                let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
-                 
-                //a region defines a centre and a size of area covered.
-                let region = MKCoordinateRegion(center: location, span: span)
-                 
-                //make the map show that region we just defined.
-                self.myMap.setRegion(region, animated: true)
-                 
-                //the following code is to prevent a bug which affects the zooming of the map to the user's location.
-                //We have to leave a little time after our initial setting of the map's location and span,
-                //before we can start centering on the user's location, otherwise the map never zooms in because the
-                //intial zoom level and span are applied to the setCenter( ) method call, rather than our "requested" ones,
-                //once they have taken effect on the map.
-                 
-                //we setup a timer to set our boolean to true in 5 seconds.
-                _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector:
-    #selector(startUserTracking), userInfo: nil, repeats: false)
-            }
-             
-            if startTrackingTheUser == true {
-                myMap.setCenter(location, animated: true)
-            }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locationOfUser = locations[0] //this method returns an array of locations
+        //generally we always want the first one (usually there's only 1 anyway)
+        let latitude = locationOfUser.coordinate.latitude
+        let longitude = locationOfUser.coordinate.longitude
+        //get the users location (latitude & longitude)
+        let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        
+        if firstRun {
+            firstRun = false
+            let latDelta: CLLocationDegrees = 0.0025
+            let lonDelta: CLLocationDegrees = 0.0025
+            //a span defines how large an area is depicted on the map.
+            let span = MKCoordinateSpan(latitudeDelta: latDelta, longitudeDelta: lonDelta)
+            
+            //a region defines a centre and a size of area covered.
+            let region = MKCoordinateRegion(center: location, span: span)
+            
+            //make the map show that region we just defined.
+            self.myMap.setRegion(region, animated: true)
+            
+            //the following code is to prevent a bug which affects the zooming of the map to the user's location.
+            //We have to leave a little time after our initial setting of the map's location and span,
+            //before we can start centering on the user's location, otherwise the map never zooms in because the
+            //intial zoom level and span are applied to the setCenter( ) method call, rather than our "requested" ones,
+            //once they have taken effect on the map.
+            
+            //we setup a timer to set our boolean to true in 5 seconds.
+            _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector:
+                                        #selector(startUserTracking), userInfo: nil, repeats: false)
         }
+        
+        if startTrackingTheUser == true {
+            myMap.setCenter(location, animated: true)
+        }
+
+    }
          
+        
         //this method sets the startTrackingTheUser boolean class property to true. Once it's true,
        //subsequent calls to didUpdateLocations will cause the map to centre on the user's location.
         @objc func startUserTracking() {
@@ -67,7 +69,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var murals:muralList? = nil
     var info = ""
     
+    
     func updateTheTable() {
+        let sortedList = murals?.newbrighton_murals.sorted{ $0.title < $1.title }
+        murals?.newbrighton_murals = sortedList ?? []
         theTable.reloadData()
     }
     

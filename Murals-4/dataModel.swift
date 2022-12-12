@@ -25,5 +25,5 @@ struct murals: Decodable {
     let images: [img]
 }
 struct muralList: Decodable {
-    let newbrighton_murals: [murals]
+    var newbrighton_murals: [murals]
 }
