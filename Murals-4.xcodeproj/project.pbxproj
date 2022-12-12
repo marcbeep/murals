@@ -15,6 +15,7 @@
 		28FFCDEA2947862000CB6105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28FFCDE92947862000CB6105 /* Assets.xcassets */; };
 		28FFCDED2947862000CB6105 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FFCDEB2947862000CB6105 /* LaunchScreen.storyboard */; };
 		28FFCDF5294786B300CB6105 /* dataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FFCDF4294786B300CB6105 /* dataModel.swift */; };
+		28FFCDF7294787D900CB6105 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FFCDF6294787D900CB6105 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		28FFCDEC2947862000CB6105 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28FFCDEE2947862000CB6105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28FFCDF4294786B300CB6105 /* dataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModel.swift; sourceTree = "<group>"; };
+		28FFCDF6294787D900CB6105 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				28FFCDDD2947861E00CB6105 /* AppDelegate.swift */,
 				28FFCDDF2947861E00CB6105 /* SceneDelegate.swift */,
 				28FFCDE12947861E00CB6105 /* ViewController.swift */,
+				28FFCDF6294787D900CB6105 /* InfoViewController.swift */,
 				28FFCDF4294786B300CB6105 /* dataModel.swift */,
 				28FFCDE32947861E00CB6105 /* Main.storyboard */,
 				28FFCDE92947862000CB6105 /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 				28FFCDE22947861E00CB6105 /* ViewController.swift in Sources */,
 				28FFCDDE2947861E00CB6105 /* AppDelegate.swift in Sources */,
 				28FFCDF5294786B300CB6105 /* dataModel.swift in Sources */,
+				28FFCDF7294787D900CB6105 /* InfoViewController.swift in Sources */,
 				28FFCDE02947861E00CB6105 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

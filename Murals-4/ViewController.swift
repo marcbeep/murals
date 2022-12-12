@@ -53,7 +53,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
           }.resume()
        }
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail"{
+            let viewController = segue.destination as! InfoViewController
+            
+            if let indexPath = self.theTable.indexPathForSelectedRow {
+                viewController.info = murals?.newbrighton_murals[indexPath.row].info ?? "Info Unavailable"
+            }
+        }
+    }
 
 }
 
