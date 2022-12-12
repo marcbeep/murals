@@ -14,6 +14,7 @@
 		28FFCDE82947861E00CB6105 /* Murals_4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 28FFCDE62947861E00CB6105 /* Murals_4.xcdatamodeld */; };
 		28FFCDEA2947862000CB6105 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28FFCDE92947862000CB6105 /* Assets.xcassets */; };
 		28FFCDED2947862000CB6105 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28FFCDEB2947862000CB6105 /* LaunchScreen.storyboard */; };
+		28FFCDF5294786B300CB6105 /* dataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FFCDF4294786B300CB6105 /* dataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		28FFCDE92947862000CB6105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28FFCDEC2947862000CB6105 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28FFCDEE2947862000CB6105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28FFCDF4294786B300CB6105 /* dataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				28FFCDDD2947861E00CB6105 /* AppDelegate.swift */,
 				28FFCDDF2947861E00CB6105 /* SceneDelegate.swift */,
 				28FFCDE12947861E00CB6105 /* ViewController.swift */,
+				28FFCDF4294786B300CB6105 /* dataModel.swift */,
 				28FFCDE32947861E00CB6105 /* Main.storyboard */,
 				28FFCDE92947862000CB6105 /* Assets.xcassets */,
 				28FFCDEB2947862000CB6105 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				28FFCDE82947861E00CB6105 /* Murals_4.xcdatamodeld in Sources */,
 				28FFCDE22947861E00CB6105 /* ViewController.swift in Sources */,
 				28FFCDDE2947861E00CB6105 /* AppDelegate.swift in Sources */,
+				28FFCDF5294786B300CB6105 /* dataModel.swift in Sources */,
 				28FFCDE02947861E00CB6105 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
