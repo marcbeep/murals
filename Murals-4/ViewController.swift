@@ -51,12 +51,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                         #selector(startUserTracking), userInfo: nil, repeats: false)
         }
         
+        
+        
         if startTrackingTheUser == true {
             myMap.setCenter(location, animated: true)
         }
+        
+        // User's current location
+        _ = CLLocation(latitude: location.latitude, longitude: location.longitude);
+        
+        /*
+        let sortedList = murals?.newbrighton_murals.sorted{         userCurrentLocation.distance(from: CLLocation(latitude: $0.lat, longitude: $0.long))
+            < userCurrentLocation.distance(from: CLLocation(latitude: $1.lat, longitude: $1.long)) }
+         */
+        
+        let sortedList = murals?.newbrighton_murals.sorted{$0.title < $1.title}
+        murals?.newbrighton_murals = sortedList ?? []
+        updateTheTable()
 
     }
-         
         
         //this method sets the startTrackingTheUser boolean class property to true. Once it's true,
        //subsequent calls to didUpdateLocations will cause the map to centre on the user's location.
@@ -71,9 +84,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func updateTheTable() {
-        let sortedList = murals?.newbrighton_murals.sorted{ $0.title < $1.title }
-        murals?.newbrighton_murals = sortedList ?? []
-        theTable.reloadData()
+                theTable.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,6 +97,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             content.text = murals?.newbrighton_murals[indexPath.row].title ?? "Title Unavailable"
             content.secondaryText = murals?.newbrighton_murals[indexPath.row].artist ?? "Artist Unavailable"
             cell.contentConfiguration = content
+        
             return cell
     }
     
@@ -134,6 +146,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
               }
           }.resume()
        }
+        
+        createAnnotation(locations: annotationLocations)
+    }
+        
+    let annotationLocations = [
+        ["title" : "I See The Sea", "latitude": 53.43881250167621, "longitude": -3.0416222190640183]
+    ]
+    
+    func createAnnotation(locations:[[String:Any]]){
+        for location in locations {
+            let annotations = MKPointAnnotation()
+            annotations.title = location["title"] as? String
+            annotations.coordinate = CLLocationCoordinate2D(latitude: location["latitude"] as! CLLocationDegrees, longitude: location["longitude"] as! CLLocationDegrees)
+            
+            myMap.addAnnotation(annotations)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
