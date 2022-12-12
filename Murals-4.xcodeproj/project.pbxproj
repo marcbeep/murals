@@ -30,6 +30,7 @@
 		28FFCDEE2947862000CB6105 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28FFCDF4294786B300CB6105 /* dataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataModel.swift; sourceTree = "<group>"; };
 		28FFCDF6294787D900CB6105 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		28FFCDF829478C4E00CB6105 /* NewBrightonMuralsWalk.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = NewBrightonMuralsWalk.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 		28FFCDD12947861E00CB6105 = {
 			isa = PBXGroup;
 			children = (
+				28FFCDF829478C4E00CB6105 /* NewBrightonMuralsWalk.gpx */,
 				28FFCDDC2947861E00CB6105 /* Murals-4 */,
 				28FFCDDB2947861E00CB6105 /* Products */,
 			);
