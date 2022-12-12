@@ -136,6 +136,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let viewController = segue.destination as! InfoViewController
             
             if let indexPath = self.theTable.indexPathForSelectedRow {
+                viewController.url = "https://cgi.csc.liv.ac.uk/~phil/Teaching/COMP228/nbm_images/" + (murals?.newbrighton_murals[indexPath.row].images[0].filename ?? "")
                 viewController.info = murals?.newbrighton_murals[indexPath.row].info ?? "Info Unavailable"
             }
         }
