@@ -11,7 +11,7 @@ import CoreLocation
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, MKMapViewDelegate, CLLocationManagerDelegate {
     
-    //MAP
+    //-----MAP-----
     
     @IBOutlet weak var myMap: MKMapView!
     
@@ -77,7 +77,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             startTrackingTheUser = true
         }
     
-    //TABLE
+    //-----TABLE-----
     
     var murals:muralList? = nil
     var info = ""
@@ -127,7 +127,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //configure the map to show the user's location (with a blue dot).
         myMap.showsUserLocation = true
                      
-        //Own Code
+        //Load data from API
       if let url = URL(string: "https://cgi.csc.liv.ac.uk/~phil/Teaching/COMP228/nbm/data2.php?class=newbrighton_murals") {
           let session = URLSession.shared
             session.dataTask(with: url) { (data, response, err) in
@@ -147,9 +147,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
           }.resume()
        }
         
-        createAnnotation(locations: annotationLocations)
+        //createAnnotation(locations: annotationLocations)
     }
-        
+    
+    //Create Annotations
     let annotationLocations = [
         ["title" : "I See The Sea", "latitude": 53.43881250167621, "longitude": -3.0416222190640183]
     ]
@@ -164,6 +165,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    //Prepare segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetail"{
             let viewController = segue.destination as! InfoViewController

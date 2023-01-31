@@ -34,6 +34,7 @@ class InfoViewController: UIViewController {
 
 }
 
+//Function to load image into view controller from API
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode
